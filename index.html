@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Login</title>
+    <link rel="stylesheet" href="styleSlideShow.css">
+    <script src="jquery-3.5.1.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script>
+        var i = 0;
+        $(document).ready(function () {
+            $('.slidertitle, #slider img').hide()
+            showNextImage()
+            setInterval('showNextImage()', 5000)
+        })
+
+        function showNextImage() {
+            i++;
+            $('#sliderImage' + i).appendTo("#slider").fadeIn(1100).delay(1100).fadeOut(1100);
+            if (i == 3) {
+                i = 0
+            }
+        }
+    </script>
+</head>
+<body>
+    <?php include 'header.php';?>
+    <?php include 'menu.php';?>
+    
+
+
+    <div class="container">
+        <div class="img-container">
+            <div class = label>
+               Ariono's Profil
+            </div>
+            <div id="slider">
+                <img src="img/1.jpg" alt="" id="sliderImage1" width="100px"height="150px">          
+            </div>
+        </div>
+           
+        <div class="article-container">
+                <h3>
+                    My Profile:
+                </h3>
+            <p>
+                Ariono is A college Student Of Politechnic State Of Malang.
+				</p>
+            <br>
+        </div>
+
+    </div>
+
+
+
+    <?php require 'footer.php';?>
+</body>
+</html>
